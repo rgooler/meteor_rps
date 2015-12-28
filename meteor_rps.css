@@ -1,6 +1,9 @@
-html, body {
-    height: 100%;
-}
+/* Designed for use with this pallette:
+ * http://paletton.com/palette.php?uid=52A0u0kktlza1w0fgqCpagIuGbk
+ */
+
+/* Keep everything organized and centered */
+html, body { height: 100%; }
 
 * { text-align: center }
 
@@ -18,9 +21,7 @@ header, footer {
   background-color: #639937;
 }
 
-header {
-  top: 0;
-}
+header { top: 0; }
 
 main{
   top: 50%;
@@ -29,10 +30,9 @@ main{
   min-width: 100%;
 }
 
-footer {
-  bottom: 0;
-}
+footer { bottom: 0; }
 
+/* Pallette-colored pretty buttons */
 .btn {
   -webkit-border-radius: 10;
   -moz-border-radius: 10;

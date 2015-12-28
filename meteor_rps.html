@@ -29,10 +29,16 @@
 </template>
 
 <template name="player">
-<h2>You are Player {{_player}}</h2>
-    <i class="fa fa-hand-rock-o fa-5x"></i>
-    <i class="fa fa-hand-paper-o fa-5x"></i>
-    <i class="fa fa-hand-scissors-o fa-5x"></i>
+<h2>You are Player {{player}}</h2>
+  <button type="submit" class="btn rock" id="rock">
+    <i class="fa fa-hand-rock-o fa-3x" id="rock"></i>
+  </button>
+  <button type="submit" class="btn paper" id="paper">
+    <i class="fa fa-hand-paper-o fa-3x" id="paper"></i>
+  </button>
+  <button type="submit" class="btn scissors" id="scissors">
+    <i class="fa fa-hand-scissors-o fa-3x" id="scissors"></i>
+  </button>
 </template>
 
 <template name="main">
