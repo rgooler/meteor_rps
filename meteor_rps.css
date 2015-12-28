@@ -14,7 +14,8 @@ header, footer, main {
 
 header, footer {
   z-index: -1;
-  background-color: #ED6A5A;
+  color: #fff;
+  background-color: #639937;
 }
 
 header {
@@ -25,8 +26,26 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  min-width: 100%;
 }
 
 footer {
   bottom: 0;
+}
+
+.btn {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #BCE39C;
+  font-size: 39px;
+  background: #447719;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #265003;
+  text-decoration: none;
 }
