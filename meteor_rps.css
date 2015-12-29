@@ -49,3 +49,15 @@ footer { bottom: 0; }
   background: #265003;
   text-decoration: none;
 }
+
+.hide { display: none;}
+.show { display: block;}
+
+h2#status.win{
+}
+
+h2#status.lose{
+}
+
+h2#status.tie{
+}

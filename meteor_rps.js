@@ -103,7 +103,11 @@ if (Meteor.isClient) {
 
         //Select opponent's move
         o_move = p1_move;
-        if(player == 1) { o_move = p2_move}
+        p_move = p2_move;
+        if(player == 1) { 
+          o_move = p2_move;
+          p_move = p1_move;
+        }
         
         if (o_move == 'rock') {
           set_opponent_style("fa fa-hand-rock-o fa-3x fa-rotate-180");
@@ -116,7 +120,31 @@ if (Meteor.isClient) {
         }
 
         // Score game
-
+        if (o_move == p_move){
+          // matching moves tie
+          document.getElementById("status-tie").className = "show";
+        } else if (o_move == 'rock' && p_move == 'paper') {
+          // paper beats rock
+          document.getElementById("status-win").className = "show";
+        } else if (o_move == 'paper' && p_move == 'scissors') {
+          // scissors beats paper
+          document.getElementById("status-win").className = "show";
+        } else if (o_move == 'scissors' && p_move == 'rock') {
+          // rock beats scissors
+          document.getElementById("status-win").className = "show";
+        } else if (p_move == 'rock' && o_move == 'paper') {
+          // paper beats rock
+          document.getElementById("status-lose").className = "show";
+        } else if (p_move == 'paper' && o_move == 'scissors') {
+          // scissors beats paper
+          document.getElementById("status-lose").className = "show";
+        } else if (p_move == 'scissors' && o_move == 'rock') {
+          // rock beats scissors
+          document.getElementById("status-lose").className = "show";
+        } else {
+          alert('Someone cheated!');
+        }
+        
         // Refresh to start a new game
         Meteor.call('game_cleanup', function(err, response) {});
 
@@ -124,6 +152,9 @@ if (Meteor.isClient) {
           Session.set('p1ready', false);
           Session.set('p2ready', false);
           set_opponent_style("fa fa-cog fa-spin fa-3x");
+          document.getElementById("status-win").className = "hide";
+          document.getElementById("status-lose").className = "hide";
+          document.getElementById("status-tie").className = "hide";
           document.getElementById("rock").style.visibility = "visible";
           document.getElementById("paper").style.visibility = "visible";
           document.getElementById("scissors").style.visibility = "visible";
