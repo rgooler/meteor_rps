@@ -29,7 +29,9 @@
 </template>
 
 <template name="player">
-<h2>You are Player {{player}}</h2>
+<h2>Your opponents move...</h2>
+<i class="fa fa-cog fa-spin fa-3x" id="opponent"></i>
+<h2>Choose your move...</h2>
   <button type="submit" class="btn rock" id="rock">
     <i class="fa fa-hand-rock-o fa-3x" id="rock"></i>
   </button>
@@ -37,7 +39,7 @@
     <i class="fa fa-hand-paper-o fa-3x" id="paper"></i>
   </button>
   <button type="submit" class="btn scissors" id="scissors">
-    <i class="fa fa-hand-scissors-o fa-3x" id="scissors"></i>
+    <i class="fa fa-hand-scissors-o fa-3x fa-rotate-90" id="scissors"></i>
   </button>
 </template>
 
