@@ -5,12 +5,6 @@ if (Meteor.isClient) {
   Session.setDefault('p1ready', false);
   Session.setDefault('p2ready', false);
 
-  // Really lazy way to update both player's ready status
-  // Better would be a publish/subscribe, but I couln't get it to work
-  // So at least I stop polling when we know who played what.
-
-  // Would be good to make this only happen on the player page
-
   Template.player.created = function() {
     set_intervals();
   };
@@ -26,8 +20,6 @@ if (Meteor.isClient) {
       play_move(Session.get('player'), 'scissors');
     }
   });
-
-
 
   // --[ Client functions] ------------
   function set_intervals(){
@@ -164,7 +156,6 @@ if (Meteor.isClient) {
       }
     }
   }
-
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
